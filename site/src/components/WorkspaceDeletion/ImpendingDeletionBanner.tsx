@@ -1,8 +1,7 @@
 import { Workspace } from "api/typesGenerated"
-import { displayImpendingDeletion } from "./utils"
 import { useDashboard } from "components/Dashboard/DashboardProvider"
 import { Alert } from "components/Alert/Alert"
-import { formatDistanceToNow, differenceInDays, add, format } from "date-fns"
+import { formatDistanceToNow } from "date-fns"
 import Link from "@mui/material/Link"
 import { Link as RouterLink } from "react-router-dom"
 
@@ -62,7 +61,7 @@ export const LockedWorkspaceBanner = ({
   }
 
   const alertText = (): string => {
-    if (workspaces.length == 1) {
+    if (workspaces.length === 1) {
       if (
         hasDeletionScheduledWorkspaces &&
         hasDeletionScheduledWorkspaces.deleting_at &&
